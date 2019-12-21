@@ -44,7 +44,7 @@ void loop() {
   }
   else{                                         // Si la distancia está fuera del rango (muy cerca o más lejos de 5 metros), decimos que no muestre nada
     Serial.println("--- Fuera de rango ---");
-    digitalWrite(PinLed, LOW);
+    digitalWrite(PinLed, LOW);  // Apagamos el led por si acaso
   }
 }
 
