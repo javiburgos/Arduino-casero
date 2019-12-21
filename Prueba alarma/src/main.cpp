@@ -58,11 +58,11 @@ void mostrar_distancia(){
 // Función que hace parpadear al led progresivamente
 void alarma(){
   int i;
-  for(i=0; i<=255; i++){
+  for(i=0; i<=255; i+=10){
     analogWrite(PinLed, i);
     delay(10);
   }
-  for(i=255; i>=0; i--){
+  for(i=255; i>=0; i-=10){
     analogWrite(PinLed, i);
     delay(10);
   }
