@@ -4,7 +4,7 @@
 
 #define PinTrig 7
 #define PinEcho 6
-#define PinLed 13
+#define PinLed 3  // Pin PWM
 
 void mostrar_distancia();
 void alarma();
@@ -55,10 +55,15 @@ void mostrar_distancia(){
   Serial.println(" cm");
 }
 
-// Función que hace parpadear al led
+// Función que hace parpadear al led progresivamente
 void alarma(){
-  digitalWrite(PinLed, HIGH);
-  delay(200);
-  digitalWrite(PinLed, LOW);
-  delay(200);
+  int i;
+  for(i=0; i<=255; i++){
+    analogWrite(PinLed, i);
+    delay(10);
+  }
+  for(i=255; i>=0; i--){
+    analogWrite(PinLed, i);
+    delay(10);
+  }
 }
