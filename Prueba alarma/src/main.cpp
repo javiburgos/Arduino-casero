@@ -67,3 +67,8 @@ void alarma(){
     delay(10);
   }
 }
+
+// Función que hace sonar el buzzer
+void buzzer(){
+  
+}
